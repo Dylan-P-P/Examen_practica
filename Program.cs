@@ -53,10 +53,10 @@ namespace Examen_practica
             Console.WriteLine(titulo);
 
             Console.WriteLine("MATRIZ DIMENSIONAL DE DATOS (PRECIO Y CANTIDAD)");
-            Console.Write($"{"Fila",-25}| \t{"Codigo",-25} |\t{"Precio",-25}|\t{"Cantidad",-25}"); 
+            Console.Write($"{"Fila",-23}| \t{"Codigo",-25} |\t{"Precio",-25}|\t{"Cantidad",-25}"); 
             for (int i = 0; i < codigos.Length; i++)
             {
-                Console.WriteLine($"{codigos[i],-25}|\t{ automovil[i],-25}|\t{precio[i],-25}|\t{cantidad[i],-25}");
+                Console.WriteLine($"{codigos[i],-23}|\t{ automovil[i],-25}|\t{precio[i],-25}|\t{cantidad[i],-25}");
 
             }
 
@@ -94,7 +94,21 @@ namespace Examen_practica
             }
                 
         }
-        
+
+        public static void Imprimir_Reporte(string[] automoviles, string[] modelos, double[] precios, int[] cantidad)
+        {
+            string titulo1 = "--- REPORTE ORDENADO POR MONTO NETO ---";
+            int posicion1 = (Console.WindowWidth - titulo1.Length) / 2;
+            Console.SetCursorPosition(posicion1, Console.CursorTop);
+            Console.WriteLine(titulo1);
+
+            Console.WriteLine($"{"Automovil",-26}|\t{"Modelo",-21}|\t{"Total Neto",-25}");
+            for (int i = 0; i < automoviles.Length; i++)
+            {
+                double total = precios[i] * cantidad[i];
+                Console.WriteLine($"{automoviles[i],-25} |{modelos[i],-25} | {total,-25}");
+            }
+        }
         static void Main(string[] args)
         { 
             int opc = 0;
@@ -106,14 +120,14 @@ namespace Examen_practica
                 Console.WriteLine("[3]Metricas Resumen");
                 Console.WriteLine("[4]Buscar");
                 Console.WriteLine("[5]SALIR");
-                opc = int.Parse(Console.ReadLine());
+                opc = Convert.ToInt32(Console.ReadLine());
                 switch (opc)
                 {
                     case 1:
                         ImprimirMatrizDatos(codigos, automoviles, precios, cantidad);
                         break;
                     case 2:
-                        //Reporte ordenador
+                        Imprimir_Reporte(automoviles, modelos, precios, cantidad);
                         break;
                     case 3:
                         //Metrica resumen
