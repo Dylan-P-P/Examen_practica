@@ -136,7 +136,7 @@ namespace Examen_practica
                         //buscar;
                         break;
                     case 5:
-                        Console.WriteLine("Muchos exitos para el nuevo semestre");
+                        Console.WriteLine("Saliendo del programa...");
                         break;
                 }
                 Console.ReadKey();
