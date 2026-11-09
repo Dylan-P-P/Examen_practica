@@ -53,7 +53,7 @@ namespace Examen_practica
             Console.WriteLine(titulo);
 
             Console.WriteLine("MATRIZ DIMENSIONAL DE DATOS (PRECIO Y CANTIDAD)");
-            Console.Write($"{"Fila",-23}| \t{"Codigo",-25} |\t{"Precio",-25}|\t{"Cantidad",-25}"); 
+            Console.WriteLine($"{"Fila",-23}| \t{"Codigo",-24} |\t{"Precio",-25}|\t{"Cantidad",-25}"); 
             for (int i = 0; i < codigos.Length; i++)
             {
                 Console.WriteLine($"{codigos[i],-23}|\t{ automovil[i],-25}|\t{precio[i],-25}|\t{cantidad[i],-25}");
@@ -115,6 +115,9 @@ namespace Examen_practica
             while (opc != 5)
             {
                 Console.Clear();
+                Console.WriteLine(new string('=', 85));
+                Console.WriteLine("\t\t\tCONTROL DE VENTAS AUTOMOTRICES");
+                Console.WriteLine(new string('=', 85));
                 Console.WriteLine("[1]Mostrar datos de matriz");
                 Console.WriteLine("[2]Reporte ordenado decrecientemente");
                 Console.WriteLine("[3]Metricas Resumen");
