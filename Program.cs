@@ -27,21 +27,21 @@ namespace Examen_practica
             }
         }
 
-        public static void Calcular_total(string[] automoviles, double[] precios, int[] cantidad)
+        public static void Calcular_total(string[] automoviles, string[] modelos, double[] precios, int[] cantidad)
         {
             double acumulador = 0;
             int contador = 0;
             for (int i = 0; i < automoviles.Length; i++)
             {
                 double total = precios[i] * cantidad[i];
-                Console.Write(automoviles[i], (i+1) + ": "+total);
+                Console.WriteLine((i + 1)+ ".-\t" + automoviles[i] + "\t-\t" + modelos[i]  + "\t: \t$"+total);
                 if (total > 50000)
                 {
                     contador++;
                 }
                 acumulador += total;
             }
-            Console.WriteLine($"El total de ventas es: {acumulador}");
+            Console.WriteLine($"Gran total acumulado: ${acumulador}");
             Console.WriteLine($"La cantidad de autos con ventas mayores a 50,000 es: {contador}");
         }
 
@@ -133,7 +133,7 @@ namespace Examen_practica
                         Imprimir_Reporte(automoviles, modelos, precios, cantidad);
                         break;
                     case 3:
-                        //Metrica resumen
+                        Calcular_total(automoviles, modelos, precios, cantidad);
                         break;
                     case 4:
                         //buscar;
